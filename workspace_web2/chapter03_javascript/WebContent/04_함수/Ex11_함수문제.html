@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		함수 n자리로 맞춰서 사용하기 
+		
+		*num 값이 각각 1,2,3 일 떄
+		
+		Ex) makeZeroNum(num,2) =>01,02,03 ...
+		Ex) makeZeroNum(num,3) => 010,002,003 ...
+		Ex) makeZeroNum(num,3) =>0001,0002,0003 ...
+		
+		함수 makeZeoroNum를 작성하시오
+		* 문자열 길이 length 필드 사용
+	*/
+	
+	function makeZeroNum(num, n){
+		var num = num.toString();
+		var zero ='';
+			if(num.length < n){
+			for (var i = 0; i < n - num.length; i++) 
+				zero += '0';
+			return zero + num;
+			}
+			
+		}
+	document.write("<h3>" + makeZeroNum(1, 2) + "</h3>");
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

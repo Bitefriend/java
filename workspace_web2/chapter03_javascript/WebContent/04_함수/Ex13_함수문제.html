@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1 id="clock"></h1>
+<script type="text/javascript">
+	/* 
+		현재 날짜와 시간을 다음과 같은 형식으로 출력하시오.
+		
+		ex) 2023-05-10 17:04:08 (초는 계속 바뀜)
+	*/
+	
+	function watch(){
+			
+			var date = new Date(1996, 2, 21);
+			var a = date.setFullYear(1996);
+			var b = date.setMonth(2) +1;
+			var c = date.setDate(21);
+			var d = date.setHours(4);
+			var e = date.setMinutes(0);
+			var f = date.setSeconds(0);
+			var time ;
+			document.write(a + "-" + b + "-" + c +" "+ " " + d + ":" + e +":" +f);
+
+			var clocktime = document.getElementById("clock");
+	
+			clocktime.innerHTML = time;	
+			setInterval(
+					(time,1));
+	}
+		
+		watch();
+		
+
+</script>
+</body>
+</html>

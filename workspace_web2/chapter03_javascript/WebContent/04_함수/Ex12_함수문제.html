@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		현재 날짜와 시간을 다음과 같은 형식으로 출력하시오.
+		
+		ex) 2019-11-15 오후 3:24
+	*/
+	
+	function to12Times(){
+		/*	
+		var year = getFullYear(date);
+		var month = ('0' + (getMonth() +1));
+		var dat = ('0' + (getDate()));
+		*/
+		var date = new Date();
+		var a = date.setFullYear(2004);
+		var b = date.setMonth(2) +1;
+		var c = date.setDate(21);
+		var d = date.setHours(5);
+		var e = date.setMinutes(0);
+		var ampm = (d < 12) ? "오전" : "오후"; 
+		
+		var result = a + "-" + b + "-" + c +" "+ ampm + " "+ (d > 12 ? d-12 : d) + ":" + e;
+		return result;
+		/*
+		document.write(date.getFullYear()+ '-' + 
+		(date.getMonth() +1)+'-' + date.getDate() +
+		'-'+ date.getHours() + ':' + date.getMinutes());	
+		*/
+	}
+	document.write(to12Times());
+</script>
+</head>
+<body>
+
+</body>
+</html>
