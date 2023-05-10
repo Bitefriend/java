@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-color: gray;
+	}
+	h2{
+		color : red;
+	}
+	.perso{
+		width : 480px;
+		height : 100px;
+		padding : 30px 200px 10px 50px;
+
+		margin : 10px 10px 10px 10px;
+	}
+	.base{
+		margin : auto;
+		width : 640px;
+		height: 800px;
+	}
+	.house{
+		width : 480px;
+		height : 200px;
+		padding : 30px 200px 10px 50px;
+
+		margin : 10px 10px 10px 10px;
+		
+	}
+	.inpu{
+		padding-right: 200px;
+	}
+	.labe{
+		display: inline-block;
+		 width: 100px;
+		 text-overflow: bord;
+	}
+</style>
+</head>
+<body>
+	<div style="margin : auto; width : 800px; text-align: center;"><h1>상품 주문서</h1></div>
+	<div class="base">
+		<h2>개인 정보</h2>
+		<div>
+		<fieldset class="perso">
+			<label style="padding-bottom: 10px;" class="labe">이름</label><input class="inpu" type="text" placeholder="필수"><br>
+			<label style="padding-bottom: 10px;" class="labe">연락처</label><input class="inpu" type="number" placeholder="필수"><br>
+			<label style="padding-bottom: 10px;" class="labe">주소</label><input class="inpu" type="text" placeholder="필수">
+		</fieldset>
+		</div>
+		
+		<div><h2>배송지 정보</h2></div>
+		<input type="checkbox"><label>주문자 정보와 같음</label>
+		<div>
+			<fieldset class="house">
+				<label style="padding-bottom: 10px;" class="labe">이름</label> <input class="inpu" type="text" placeholder="필수"><br>
+				<label style="padding-bottom: 10px;" class="labe">연락처</label> <input class="inpu" type="number" placeholder="필수"><br>
+				<label style="padding-bottom: 10px;" class="labe">주소</label> <input class="inpu" type="text" placeholder="필수"><br>
+				<label style="padding-bottom: 10px;" class="labe">메모</label> <textarea  rows="5" cols="50" style = "resize: none; vertical-align: top;"  placeholder="경비실에 맡겨주세요. 2층에 맡겨주세요."></textarea>
+			</fieldset>
+			<div style="height : 100px; width : 650px; margin :auto; padding-left : 300px;">
+				<input type="button" value="주문하기">
+				<input type="button" value="다시작성">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

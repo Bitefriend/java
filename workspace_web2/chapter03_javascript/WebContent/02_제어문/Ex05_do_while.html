@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		적을 쓰러뜨려라!
+		
+		1. 적은 100의 체력을 가지고 있다.
+		2. 한 번 공격 할 때마다 랜덤 0~29 사이의 체력을 닳게 할 수 있따.
+		3. 몇 번만에 적을 쓰러뜨렸는지 횟수를 출력하시오
+		
+		ex) 
+		1회 공격 결과 : 95 체력 남음 !
+		2회 공격 결과 : 80 체력 남음 !
+		...
+		5회만에 적을 쓰러 뜨렸다 !
+	*/
+	
+	var en = 100;
+	var count = 1;
+	
+	do{
+		var att = Math.floor(Math.random() * 30); // 랜덤 값 생성
+		alert("적의 체력은" + en + " 입니다 !"); // 체력 표시
+		en -= att; // 공격할때마다 피 줄어듬
+		en = en < 0 ? 0 : en; // 체력이 0이하라도 0으로 표시
+		alert(count + " 번째 공격 ! 적 체력은 : " + (en)); // 공격 !
+		count ++; // 공격 횟수 카운트
+	}while(en > 0){ // 체력이 0이되지않으면 계속 반복
+		
+		alert(count + " 번 만에 쓰러 뜨렸다 !"); // 0이되는 순간 코드 실행 후 종료
+	}
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		border : 1px solid black;
+		box-sizing: border-box; /* 박스 사이즈에 border가 포함 */
+		
+	}
+	.container{
+	width: 1000px;
+	margin: auto;
+	height: 1000px;
+	}
+	.top{
+		width: 100%;
+		height: 300px;
+		background-color: grey;
+	}
+	.body{
+		/* background-color: navy;*/
+		width: 100%;
+		height : 700px;
+	}
+	.middle{
+		/* background-color: purple;*/
+		height: 100%;
+		width: 80%;
+		float:left;
+	}
+	.left{
+		background-color: lime;
+		height: 100%;
+		width: 20%;
+		float: left;
+	}
+	.rtop{
+		height: 80%;
+		width: 100%;
+		background-color: purple;
+		
+	}
+	.rbot{
+		background-color: red;
+		height : 20%;
+		width :100%;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="top"></div>
+	<div class="body">
+		<div class="left"></div>
+		<div class="middle">
+			<div class="rtop"></div>
+			<div class="rbot"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

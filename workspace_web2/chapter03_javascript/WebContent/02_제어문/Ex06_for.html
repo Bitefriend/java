@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	tr{
+		border : 1px solid black;
+	}
+	td {
+		border : 1px solid black;
+	}
+
+</style>
+<script type="text/javascript">
+	//1. 입력 받은 구구단을 출력하시오.
+	
+	/* 
+		ex)
+		2x1=2
+		2x2=4
+		...
+		2x9=18
+	*/
+	/*
+	var gugu;
+	gugu = Number(prompt("구구단을 입력하시오"));
+	for (var i = 1; i <= 9; i++) {
+		document.write(gugu + "*" + i + "=" + (gugu*i) + "<br>");
+	}
+	*/
+	// 2. 전체 구구단 출력
+	/*
+	for (var i = 2; i <= 9; i++) {
+		for (var j = 1; j <= 9; j++) {
+			document.write(i + "*" + j + "=" + (i*j) + "<br>");
+		}
+		 document.write("<br>");
+	}
+	*/
+	//3. 테이블 (<table></table>)을 이용하여 전체 구구단 출력
+	document.write("<table border='1'>");
+
+	for (var i = 1; i <= 9; i++) {
+		document.write("<tr>");
+		for (var j = 2; j <= 9; j++) {
+			document.write("<td>" + j + "*" + i + "=" + (i*j) + "</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

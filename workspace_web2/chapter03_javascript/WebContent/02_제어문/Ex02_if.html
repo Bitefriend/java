@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>성적확인</h1>
+	<p>평균 : <span id = "avg"></span>점</p>
+	<p>학점 : <span id = "grade"></span>점 </p>
+	
+	<script type="text/javascript">
+		/* 
+			국어, 영어, 수학 점수를 입력받아
+			평균과 학점을 위 태그내에 삽입하시오
+			
+			학점 : 90점 이상 A, 80점 이상 B, 70이상 C, 60이상 D, 60미만 F
+		*/
+		
+		var avg = document.getElementById("avg");
+		var grade = document.getElementById("grade");
+		
+		var mat = Number(prompt("수학 학점을 입력하시오"));
+		var eng = Number(prompt("영어 학점을 입력하시오"));
+		var ang = Number(prompt("국어 학점을 입력하시오"));
+		
+		var avg2 = (mat + eng + ang) /3;
+		
+
+	
+		if(avg2 >= 90){
+			grade.innerHTML += "A";
+		}else if(avg2 >= 80){
+			grade.innerHTML += "B";
+		}else if(avg2 >= 70){
+			grade.innerHTML += "C";
+		}else if(avg2 >= 60){
+			grade.innerHTML += "D";
+		}else{
+			grade.innerHTML += "F";
+		}
+	  avg.innerHTML += avg2;
+		
+	</script>
+</body>
+</html>

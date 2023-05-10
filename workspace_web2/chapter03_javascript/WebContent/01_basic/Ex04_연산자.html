@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//1. 문자열 연산자 : +
+	
+	//2. 산술 연산자 : +, -, *, / (나누기), %(나머지), ++(1증가), --(1감소)
+	
+	// 몫을 구하는 방법 :
+		document.write("나누기 = " + (7/2) + "<br>")
+		document.write("나머지 = " + (7%2) + "<br>")
+		document.write("몫 = " + parseInt(7/2) + "<br>") // parseInt(a/b) : 정수로 변환
+		document.write("몫 = " + Math.floor(7/2) + "<br>")// Math.floor(a/b) : 내림처리
+
+		document.write(10 + 20 + "<br>")				//30
+		document.write("10" + 20 + "<br>")				// 1020
+		document.write(10 + "20" + "<br>")				//1020
+		document.write("10" + "20" + "<br>")			//1020
+		
+		document.write(10 + 20 + "30" + "<br>")			//3030
+		document.write(10 + "20" + 30 + "<br>")			//102030
+		document.write("10" + 20 + 30 +  "<br>")		//102030
+		
+		document.write("10" - 2 + "<br>") 				//8 자동 형 변환 뒤 계산
+		document.write("10" * 2 + "<br>")				//20 자동 형 변환 뒤 계산
+		document.write("10" / 2 + "<br>")				//5 자동 형 변환 뒤 계산
+		document.write("10" % 2 + "<br>")				//0 자동 형 변환 뒤 계산
+		
+		
+	//3. 관계 연산자 : >, >=, <, <=, ==, !=
+		document.write((10 >= 9 >= 8) + "<br>") // false
+	//1) 10>=9 결과 true
+	//2) true>= 8
+	
+	
+	//4. 논리 연산자 : &&, ||, !
+	//짧은 연산지원
+	// 1) && : 조건식이 false가 되면 더 이상 연산하지 않는다. 어차피 false
+	// 2) || : 조건식이 true가 되면 더 이상 연산하지 않는다. 어차피 true
+	
+	//5. ===, !==
+		var a = true;
+		var b = 1;
+		document.write("true == 1 : " + (a == b ) + "<br>");	// == : 값만 비교, 타입 비교x
+		document.write("true === 1 : " + (a === b ) + "<br>"); 	// === : 값과 타입 모두 비교
+		
+	//6. 복합 연산자 : +=, -=, *=, /=, %=
+	
+	//7. 삼항 연산자 : 조건식 ? true : false;
+	
+		
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

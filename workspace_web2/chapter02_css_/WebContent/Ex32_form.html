@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input[type = "radio"]{
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	input[type = "checkbox"]{
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+</style>
+</head>
+<body>
+	<fieldset>
+	<legend> 취미 선택 (1개만 선택가능)</legend>
+		<label><input type="radio" name="hobbies" value="영화"> 영화</label>
+		<label><input type="radio" name="hobbies" value="운동"> 운동</label>
+	</fieldset>
+	
+	<fieldset>
+	<legend> 관심 분야 (복수 선택가능)</legend>
+		<label><input type="checkbox" name="hobbies" value="정치"> 정치</label>
+		<label><input type="checkbox" name="hobbies" value="문화"> 문화</label>
+		<label><input type="checkbox" name="hobbies" value="경제"> 경제</label>
+	</fieldset>
+</body>
+</html>

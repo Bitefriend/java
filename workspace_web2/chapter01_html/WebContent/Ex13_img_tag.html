@@ -1,0 +1,73 @@
+<!-- 
+	<img> 태그
+	
+	1. 이미지를 삽입
+	2. 속성
+		1) src : 이미지의 위치(경로)
+		2) alt : 이미지 대신 표시할 텍스트
+	3. 경로 표시
+		1) 절대 경로 : C:\dev\workspace\workspace_web2\chapter01_html\WebContent\images/google.jpg
+		2) 상대 경로 : images/google.jpg(/로 시작하면 컨텍스트 루트부터 시작)
+		3) 주요 폴더
+			(1) .  : 현재 폴더
+			(2) .. : 상위 폴더 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		img 태그의 속성
+		- alt : 이미지 설명
+		- src : 이미지 출처(경로)
+		- title : 이미지 타이틀
+		- style : 이미지 스타일
+		- width, height : 이미지 넓이, 높이
+	 -->
+	 
+	 <h1>이미지 표시</h1>
+	 <img alt = "구글 이미지" src = "images/google.jpg">
+	 <!-- alt 속성을 사용해야 하는 이유 : 이미지를 제대로 가져오지 못할 경우 alt 값 출력 -->
+	 
+	 <h1>서버에 저장된 이미지</h1>
+	 <img alt="뿌엥 이미지" src="data:image/jpeg;base64,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">
+	 
+	 <h1>크기를 조정한 이미지</h1>
+	 <img alt = "구글 이미지" src = "images/google.jpg" width = "300">
+	 <!-- 너비나 높이 중 하나만 조정해도 함께 조정됨 -->
+	 
+	 <hr>
+	 
+	 <img src="images/google.jpg" width = "300" align= "top">구글 로고 -1<br><br>
+	 <img src="images/google.jpg" width = "300" align= "middle">구글 로고 -2<br><br>
+	 <img src="images/google.jpg" width = "300" align= "bottom">구글 로고 -3<br><br>
+	 <img src="images/google.jpg" width = "300" align= "left">구글 로고 -4<br><br>
+	 <img src="images/google.jpg" width = "300" align= "right">구글 로고 -5<br><br>
+	 
+	 <!-- 이미지 맵 -->
+	 <!-- 
+	 	<img src = "" usemap "#맵">
+	 	<map name = "맵이름">
+	 		<area href = "연결주소" shape = "모양(rect, circle)" coords = "좌표">
+	 		</map>
+	  -->
+	  <!-- 그림판에 이미지 로드 후 좌표 확인 -->
+	  <!-- 사각형 : x1: 15 y1 : 1 x2 : 145 y2 : 140 -->
+	  <!-- 원 : x:310 y: 75 r: 40 -->
+	 <h1>이미지 맵</h1>
+	 <img src="./images/google.jpg" usemap = "#google">
+	 <map name = "google">
+	 	<area href = "https://www.google.co.kr/" shape = "rect"
+	 		coords = "15,1,145,140" style = "background-color : red">
+	 	<area href = "https://www.fox.com/the-simpsons/" shape = "circle" coords = "310,75,40">
+	 	
+	 </map>
+	 
+	
+	 
+</body>
+</html>

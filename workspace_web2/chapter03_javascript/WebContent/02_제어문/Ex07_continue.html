@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		5개의 양수만 입력 받아서(prompt) 평균 구하기
+		0이하의 숫자는 입력에서 제외하고 다시 입력.
+		숫자가 아닌 입력도 제외하고 다시 입력.
+	*/
+	/*
+	var num;
+	var count = 1;
+	var avg = 0;
+	
+	
+	while(count < 6) {
+		num = Number(prompt("양수를 입력하시오."));
+		if(num > 0){
+			count ++;
+			avg+= num;
+		}else{
+			continue;
+		}
+	}
+	var result = avg/5;
+	alert("평균 : " + result);
+	*/
+	/*
+	var count1 = 0;
+	var avg2 = 0;
+	for (var i = 0; i < 5; i++) {
+		var num1 = Number(prompt(i+ 1 + "양수를 입력하시오"));
+		if(num1 >= 0){
+			avg2+=num1;
+		}else{
+			i--;
+			continue;
+		}
+	}
+	var result2 = avg2/5;
+	alert("평균 : " + result2);
+	
+	*/
+	
+	var avg3 = 0;
+	for (var i = 0; i < 5; i++) {
+		var num2 = Number(prompt(i+ 1 + "양수 ! 를 입력하시오"));
+		if(isNaN(num2) || num2 < 0){
+			i--;
+			continue;
+		}else{
+			avg3+=num2;
+		}
+	}
+	var result3 = avg3/5;
+	alert("평균 : " + result3);
+	
+	// 성인이거나 남자 면 ~~
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

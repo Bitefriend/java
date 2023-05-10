@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//선언적 함수를 "변수에 저장할 수 있다.
+	
+	// 1. 선언적 함수 정의 + 변수 저장
+	var view = function yourFunction(){
+		document.write("<h3>yourFunction  실행</h3>")
+	}
+	
+	// 2. 변수에 저장된 선언적 함수 호출
+	view(); // yourFunction();
+	
+	// 정의된 선언적 함수를 나중에 따로 "변수"에 저장할 수 있다.
+	// 1. 선언적 함수 정의
+	function ourFuntion(){
+		document.write("<h3>yourFunction  실행</h3>")
+	}
+	//2. 정의된 함수 변수에 저장
+	var view2 = ourFuntion; // ourFunction 뒤에 () 없음
+	// 3. 변수에 저장된 선언적 함수 호출
+	view2();
+</script>
+</head>
+<body>
+
+</body>
+</html>
