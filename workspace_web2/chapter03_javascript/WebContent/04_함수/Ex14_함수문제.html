@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="Clock">0000-00-00 00:00:00</h1>
+	<button onclick="start();">현재 시간 출력</button>
+	<button onclick="stop();">정지</button>
+
+	<script type="text/javascript">
+	function watch(){
+		
+			var date = new Date();
+			var a = date.getFullYear();
+			var b = date.getMonth() +1;
+			var c = date.getDate();
+			var d = date.getHours();
+			var e = date.getMinutes();
+			
+			var f = date.getSeconds();
+			
+			/* 
+				d.padStart(2,0) 을 넣으면 밑에 함수 대체 가능
+			*/
+
+			function dd(a1){
+					a1 = String(a1);
+					
+					
+					if (a1.length == 1) {
+						a1 = '0' + a1;
+					}
+				return a1;
+			};
+			
+			var time = a + "-" + dd(b) + "-" + dd(c) +" "+ " " + dd(d) + ":" + dd(e) +":" + dd(f);
+			 
+			var clocktime = document.getElementById("Clock");
+			
+			clocktime.innerHTML = time;	
+			
+	}
+	var timee;
+	function start() {
+		timee = setInterval(watch, 1000);
+	}
+	
+	function stop() {
+		clearInterval(timee);
+		alert("시간아 멈춰라");
+		
+	
+	}
+	
+
+	
+	</script>
+
+
+</body>
+</html>
