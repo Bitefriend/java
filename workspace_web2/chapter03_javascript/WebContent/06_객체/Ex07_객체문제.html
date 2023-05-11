@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		1. 빈 객체 car 생성
+		2. 객체 car에 동적으로 프로퍼티 추가
+			1) model = 아무거나
+			2) speed = 0
+			3) oil = 50;
+			4) MAX_SPEED = 100
+			5) speedUp 함수 -> speed 10 증가서 oil 5사용
+			5) speedDown 함수 -> speed 감소에 oil 미사용
+	*/
+	var car ={
+		model :"EtronGT",
+		speed : 0,
+		oil :50,
+		MAX_SPEED : 30,
+		speedUp : function(){
+			this.speed +=10;
+			this.oil -=5;
+			
+			if(this.speed > this.MAX_SPEED){
+				this.speed = this.MAX_SPEED;
+			}
+		},
+		speedDown : function(){
+			this.speed-=10;
+			if(this.speed < 0){
+				speed = 0;
+			}
+		}
+		
+	};
+				
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedUp();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedUp();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedDown();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedUp();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedUp();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+	car.speedUp();
+	document.write("<h1>" + "현재속도 : " + car.speed + " 잔여 기름량 : " + car.oil + "</h1>" + "<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
