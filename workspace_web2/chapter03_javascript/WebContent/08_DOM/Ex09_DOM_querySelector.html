@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		getElement와 queryselector의 차이
+			1) 둘 다 DOM의 제어가 가능하다.
+			2) 처리속도는 getElement가 훨씬 빠르다.
+			3) 리턴 값은 getElement(HTMLCollection), querySelector(Nodelist)로 접근 항목이 다르다.
+			4) getElement는 id값, 태그명 등 정해져 있고 queryselector는 여러 선택자를 포함한다.
+			
+	*/
+	
+	onload = function() {
+		/* 
+			1. id="heading1" 요소의 글자를 "안녕"으로 변경
+			2. id="heading2" 요소의 글자를 "Hello"으로 변경
+			3. 첫 번째 box의 글자 색을 "빨간색"으로 변경
+			4. 두 번째 box의 글자 색을 "파란색"으로 변경
+			
+			queryselector(단수),queryselectorAll(복수) 사용
+		*/
+		
+		var heading1 = document.querySelector("#heading1");
+		heading1.innerHTML="안녕" ;
+		var heading2 = document.querySelector("#heading2");
+		heading2.innerHTML="Hello" ;
+		
+		var box = document.querySelectorAll(".box"); 	//배열
+		
+		box[0].setAttribute("style","color : red");
+		box[1].setAttribute("style", "color : blue"); 
+		
+	}
+</script>
+</head>
+<body>
+	<h1 id="heading1">Hello</h1>
+	<div class = "box">Everyone</div>
+	
+	<h1 id="heading2">안녕</h1>
+	<div class = "box">여러뷴</div>
+</body>
+</html>
