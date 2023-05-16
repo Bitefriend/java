@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 1. 배열 준비 
+		var list = [
+			{name : "김씨", age:10}, 
+			{name : "이씨", age:20}, 
+			{name : "박씨", age:30} 
+			];
+		/* 
+			배열을 순회하여 화면에 
+			김씨 : 10
+			이씨 : 20
+			박씨 : 30로 출력
+		*/
+		// 배열 list의 각 요소 = 객체 = item
+		// {name : "김씨", age:10}한 개가 각 item
+		// 객체의 요소 : 객체.속성 or 객체 ["속성"]
+		var msg ='';
+		$.each(list, function(index,item){
+			
+			msg += item.name + " : "  ;
+			msg += item.age  + "<br>";
+		});
+			$("body").html(msg);	// 덮어쓰기
+
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
