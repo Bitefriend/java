@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// form의 name 속성을 통해서 form 요소를 획득하기
+	// 1) .표기법 : document.forms.폼name.요소name
+	// 2) []표기법 : document.forms.["폼name"]["요소name"]
+		
+	function goLogin() {
+		// 아이디는 반드시 입력되도록 하고,
+		// 비밀번호는 8~16자만 입력되도록 처리
+		// 그렇지 않으면 function 종료
+		var form = document.forms.myForm;
+		
+		
+		if(form.id.value == ""){ // 아이디 입력칸은 value 
+			alert("뭐든 입력");
+			return;
+		}else if(form.pw.value.length < 8 || form.pw.value.length > 16){ // 문자열 길이 length
+			alert("8~16자 입력 ㄱ");
+			form.pw.value =""; // 데이터 초기화
+			form.pw.foucus(); // 입력 잘못된 곳 포커스
+			return;
+		}
+		
+		//자바스크립트 코드로 데이터 submit
+		form.submit();
+		
+		
+	}
+
+</script>
+</head>
+<body>
+	<!-- onsubmit은 submit 버튼일 떄 사용( function에서 리턴시 false true 붙히기 -->
+	<form action="#" name = "myForm" onsubmit="return goLogin">
+		<label for="uId">아이디</label>
+		<input type="text" name="id" id="uId"><br>
+		<label for="uPw">비밀번호</label>
+		<input type="password" name="pw" id="uPw"><br>
+		<input type="button" value="로그인" onclick="goLogin();">
+		<input type="submit" value="로그인">
+	</form>
+</body>
+</html>

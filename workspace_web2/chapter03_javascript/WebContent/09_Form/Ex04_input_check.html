@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style type="text/css">
+ 	.success{color:blue;}
+ 	.fail{color:red;}
+ 
+ </style>
+<script type="text/javascript">
+	function check() {
+		var num = document.forms.myForm.num.value;
+		var result = document.querySelector("#result");
+		var msg = '';
+		
+		if(num >= 1 && num <= 10){
+			msg = '정상범위';
+			result.classList.add("success");
+			//result.classList.remove('success'); 클래스 삭제
+		}else{
+			msg = '비정상범위';
+			result.className ="fail";
+		}
+		result.innerHTML = msg;
+	}
+</script>
+</head>
+<body>
+ <form action="#" name= "myForm">
+ 	1~10사이 정수
+ 	<input type = "number" id="num" name="num">
+ 	<input type = "button" value="검증" onclick="check()">
+ </form>
+ <br>
+ <div id = "result"></div>
+</body>
+</html>

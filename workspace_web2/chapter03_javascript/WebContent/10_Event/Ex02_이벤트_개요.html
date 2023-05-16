@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	// onload = init;	// 함수명만 필요함. 괄호 제거
+	function init() {
+		document.body.style.backgroundColor = "yellow"; //마침표
+		// document.body.style["backgroundColor"] = "yellow"; //대괄호
+		
+	}
+</script>
+</head>
+<body onload = "init()">
+	
+	<h1 onclick="location.href='http://www.google.com'">구글로 이동</h1>
+	
+	<input type="button" value="클릭" id="btn"> 
+	<script type="text/javascript">
+		var btn = document.querySelector("#btn");
+		btn.onclick = function () {
+			alert("clicked");
+			
+			btn.onclick = null;	// 이벤트해제
+		}
+	</script>
+</body>
+</html>

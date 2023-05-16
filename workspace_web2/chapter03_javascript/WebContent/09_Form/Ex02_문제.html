@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	label {
+    display: inline-block;
+    width:150px;
+	}
+</style>
+<script type="text/javascript">
+	// 1. 성명 : 필수 + 2~6글자 사이
+	// 2. 이메일 : @포함 (첫 글자 마지막 글자 체크)
+	// 3. 우편번호 : 5자 +숫자
+	// 4. 지역 : 선택
+	function goLogin() {
+		var form = document.forms.form;
+			
+		if(form.name.value == "" || form.name.value.length < 2 || form.name.value.length > 6 ){
+			alert("뭐든 입력하거나 2~6글자 맞추삼");
+			form.name.focus();
+			return;
+		}else if(form.zipCode.value =="" || form.zipCode.value.length < 4 || isNaN(form.zipCode.value)){ // 문자열 길이 length // maxlength >> 숫자 칸 더 이상추가 x
+			alert("우편번호 5숫자 이상 입력, 숫자만 입력");
+			form.zipCode.value =""; 
+			form.zipCode.focus();
+			return;
+		}else if(!form.email.value.includes('@') || form.email.value ==""||form.email.value.indexOf('@') < -1){
+			alert("골뱅이 위치확인이나 골뱅이 입력하셈 ");
+			form.email.focus();
+			return;
+		}else if(form.region.value == "0"){
+			alert("지역선택 하쇼");
+			form.region.focus();
+			return;
+		}
+		//자바스크립트 코드로 데이터 submit
+		form.submit();
+	}
+</script>
+</head>
+<body>
+	<form action="#" name="form" >
+		<label for="name1">성명</label>
+		<input type="text" name="name" id="name1"><br>
+		<label for="email1">이메일</label>
+		<input type="email" name="email" id="email1"><br>
+		<label for="zipCode1">우편번호</label>
+		<input type="text" name="zipCode" id="zipCode1"><br>
+		<label for="zipCode1">지역</label>
+		<select name = "region" style="display: inline-block; width:100px;">
+			<option value="0">::지역선택::</option>
+			<option value="1">서울</option>
+			<option value="2">경기</option>
+			<option value="3">부산</option>
+		</select><br>
+		<input type="button" value="전송" onclick="goLogin();"style="margin-left: 155px;">
+	</form>
+
+</body>
+</html>
