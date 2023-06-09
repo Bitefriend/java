@@ -1,0 +1,101 @@
+<%@page import="org.joonzis.ex.GuestBookDao"%>
+<%@page import="org.joonzis.ex.GuestBookVO"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+    <%
+    	request.setCharacterEncoding("utf-8");
+    	int idx = Integer.parseInt(request.getParameter("idx"));
+    	
+    	// dao에서 데이터 가져오기
+    	
+    	GuestBookVO vo = GuestBookDao.selectByIdx(idx);
+    	//수정 삭제 기능에서 사용하기 편함
+    	session.setAttribute("vo", vo);
+	
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 800px;
+		margin: auto;
+		text-align: center;
+	}
+	table{
+		width: 100%;
+		border-collapse: collapse;
+		text-align: left;
+	}
+	td, th{
+		border : 1px solid black;
+		padding : 10px;
+	}
+	th{
+		width : 100px;
+		background-color: purple;
+		color : #fff;
+		text-align: center;
+	}
+	tr:nth-of-type(7) {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<h2>${vo.writer }의 방명록</h2>
+		<table>
+			<tbody>
+				<tr>
+					<th>작성자</th>
+					<td>${vo.writer }</td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td>${vo.title }</td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td>${vo.email }</td>
+				</tr>
+				<tr>
+					<th>첨부파일</th>
+					
+					<c:choose>
+						<c:when test="${vo.filename eq null }">
+							<td>첨부파일 없음</td>
+						</c:when>
+						<c:otherwise>
+							<td><a href="download.jsp?path=upload&filename=${vo.filename}">${vo.filename }</a></td>
+							
+						</c:otherwise>
+					</c:choose>
+					
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td>${vo.content }</td>
+				</tr>
+				<tr>
+					<th>작성일</th>
+					<td>${vo.reg_date }</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="방명록 수정" onclick="location.href='update_page.jsp'">
+						<input type="button" value="방명록 삭제" onclick="location.href='remove_page.jsp'">
+						<input type="button" value="목록으로 이동" onclick="location.href='index.jsp'">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
