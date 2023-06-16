@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.joonzis.mybatis.mapper.member"> <!-- 경로 표기법이 클래스명 표기법처럼 사용된다! -->
+	<insert id="insert_mvo" parameterType="org.joonzis.vo.MVO">
+		insert into member_t values(
+			member_seq.nextval, 
+			#{mid},
+			#{mpw},
+			#{mname}, 
+			#{mtel},
+			#{mage}, 
+			sysdate)
+	</insert>
+	<select id="login_count" resultType="int" parameterType="org.joonzis.vo.MVO">
+		select count(*) from member_t where mid = #{mid} and mpw = #{mpw}
+	</select>
+	<select id="view_login" resultType="org.joonzis.vo.MVO" parameterType="org.joonzis.vo.MVO">
+		select * from member_t where mid = #{mid} and mpw = #{mpw}
+	</select>
+</mapper>
