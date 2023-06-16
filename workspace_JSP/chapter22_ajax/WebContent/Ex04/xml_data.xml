@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people>
+
+<people>
+	<people>
+		<name>김</name>
+		<age>30</age>
+	</people>
+	<people>
+		<name>박</name>
+		<age>40</age>
+	</people>
+	<people>
+		<name>이</name>
+		<age>50</age>
+	</people>
+	<people>
+		<name>최</name>
+		<age>60</age>
+	</people>
+	<people>
+		<name>정</name>
+		<age>70</age>
+	</people>
+</people>
