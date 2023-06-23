@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.joonzis.mybatis.mapper.score"> <!-- 경로 표기법이 클래스명 표기법처럼 사용된다! -->
+	
+	<select id="select_Score" resultType="org.joonzis.vo.SVO" parameterType="Map">
+		select*from score
+	</select>
+	
+	<insert id="insert_Score" parameterType="org.joonzis.vo.SVO">
+		insert into score values(
+			#{midx},
+			score_seq.nextval, 
+			#{subName},
+			#{sub1},
+			#{sub2}, 
+			#{sub3},
+			#{sub4}, 
+			#{avg}
+		)
+	</insert>
+	
+	<select id="score_view" resultType="org.joonzis.vo.SVO" parameterType="int">
+		select * from score where ss_idx = #{ss_idx}
+	</select>
+	
+	<update id="update_score" parameterType="org.joonzis.vo.SVO">
+		update score set  
+			sub1 = #{sub1}, 
+			sub2 = #{sub2},
+			sub3 = #{sub3},
+			sub4 = #{sub4},
+			avg = #{avg}
+		where 
+			ss_idx = #{ss_idx}
+	</update>
+	<delete id="delete_score" parameterType="org.joonzis.vo.SVO">
+		delete from score where ss_idx = #{ss_idx}
+	</delete>
+</mapper>
