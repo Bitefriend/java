@@ -38,6 +38,8 @@
 					<button type="submit" data-oper="modify" class="btn btn-primary">등록</button>
 					<button type="submit" data-oper="remove" class="btn btn-outline btn-success">삭제</button>
 					<button type="submit" data-oper="list" class="btn btn-outline btn-danger">목록으로 이동</button>
+					<input type="hidden" name="pageNum" value="${cri.pageNum }">
+					<input type="hidden" name="amount" value="${cri.amount }">
 				</form>
 			</div>
 			<!-- /.panel-body -->
@@ -63,6 +65,14 @@
 			}else if(operation ==='list'){
 				formObj.attr('action', '/board/list');
 				formObj.attr('method', 'get')
+				
+				var pageNumTag = $("input[name='pageNum']").clone();
+				var amountTag = $("input[name='amount']").clone();
+				
+				formObj.empty(); // 해당 요소 내부 초기화
+				
+				formObj.append(pageNumTag);
+				formObj.append(amountTag);
 			}
 			formObj.submit();
 		})

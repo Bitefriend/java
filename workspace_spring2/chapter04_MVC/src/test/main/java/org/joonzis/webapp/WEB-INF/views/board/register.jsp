@@ -31,8 +31,10 @@
 						<input class="form-control" name="writer">
 					</div>
 					<button type="submit" data-oper="register" class="btn btn-primary">등록</button>
- 					<button type="reset" class="btn btn-warning">취소</button>
- 					<button type="button" class="btn btn-outline btn-danger" onclick="location.href='/board/list'">목록으로 이동</button>
+ 					<button type="reset" data-oper="reset" class="btn btn-warning">취소</button>
+ 					<button type="submit" data-oper="list" class="btn btn-outline btn-danger">목록으로 이동</button>
+ 					<input type="hidden" name="pageNum" value="${cri.pageNum }">
+					<input type="hidden" name="amount" value="${cri.amount }">
 				</form>
 			</div>
 			<!-- /.panel-body -->
@@ -42,7 +44,38 @@
 	<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-
+<script type="text/javascript">
+	$(function(){
+		
+		var formObj = $("form");
+		
+		$("button").on('click', function(e){
+			e.preventDefault();
+			
+			var operation = $(this).data("oper");
+			
+			if(operation === 'register'){
+				formObj.attr('action', '/board/register');	
+			}else if(operation ==='list'){
+				formObj.attr('action', '/board/list');
+				formObj.attr('method', 'get');
+				
+				var pageNumTag = $("input[name='pageNum']").clone();
+				var amountTag = $("input[name='amount']").clone();
+				
+				formObj.empty(); // 해당 요소 내부 초기화
+				
+				formObj.append(pageNumTag);
+				formObj.append(amountTag);
+				
+			}else if(operation ==='reset'){
+				formObj[0].reset();
+				return;
+			}
+			formObj.submit();
+		})
+	})
+</script>
 
 
 

@@ -33,9 +33,12 @@
 						<input class="form-control" name="writer" value="${vo.writer }"readonly="readonly">
 					</div>
 					<button type="submit" data-oper="modify" class="btn btn-outline btn-primary">수정</button>
+					<button type="submit" data-oper="list" class="btn btn-outline btn-danger">목록으로 이동</button>
 					
 				<form action="/board/modify" method="get" id="operForm">
-					<input type="hidden" name="bno" value="${vo.bno }">
+					<input type="hidden" name="bno" id="bno" value="${vo.bno }">
+					<input type="hidden" name="pageNum" value="${cri.pageNum }">
+					<input type="hidden" name="amount" value="${cri.amount }">
 				</form>
 				
 			</div>
@@ -50,11 +53,13 @@
 <script type="text/javascript">
 	$(function(){
 		var operForm = $("#operForm")
-		
+		//수정화면 이동 버튼 클릭시 bno 값을 같이 전달 --> 기존 내부 input 태그 그대로 전달
 		$("button[data-oper='modify']").on('click', function(){
 			operForm.submit();
 		})
+		//목록 화면 이동 버튼 클릭 시 bno 값 없이 이동 --> 기존 내부 input 태그 삭제 후 이동
 		$("button[data-oper='list']").on('click', function(){
+			operForm.find("#bno").remove();
 			operForm.attr('action', '/board/list');
 			operForm.submit();
 		})
