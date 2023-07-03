@@ -3,6 +3,7 @@ package org.joonzis.service;
 import java.util.List;
 
 import org.joonzis.domain.BoardVO;
+import org.joonzis.domain.Criteria;
 import org.joonzis.mapper.BoardMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +24,8 @@ public class BoardServiceTests {
 	
 	
 	 @Test public void testgetList() { 
-		 List<BoardVO> list = boardService.getList();
+		 Criteria cri = new Criteria(1,10);
+		 List<BoardVO> list = boardService.getList(cri);
 	 
 		 for(BoardVO vo : list) { 
 			 log.info(vo); 
