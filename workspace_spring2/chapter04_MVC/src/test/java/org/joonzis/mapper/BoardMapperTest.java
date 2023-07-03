@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.joonzis.domain.BoardVO;
+import org.joonzis.domain.Criteria;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,57 +26,52 @@ public class BoardMapperTest {
 	BoardMapper mapper;
 	
 	
-	  @Test 
-	 public void testGetList() {
-	 
-	 //mapper.getList().forEach(board -> log.info(board));;
-	 
-	 List<BoardVO> list = mapper.getList();
-	 
-	 //vo 출력 
-	 for (BoardVO vo: list) { 
-	 log.info(vo); 
-	 }  
-	 }
-	
-	 @Test 
-	 public void testGetInsert() {
-	  
-	 BoardVO vo = new BoardVO();
-	  
-	 vo.setTitle("테스트 제목5"); 
-	  
-	 vo.setContent("테스트 내용5"); 
-	  
-	 vo.setWriter("user05");
-	  
-	 mapper.insert(vo); 
-	 }
-	 
-	 @Test 
-	 public void testView() { 
-	  
-	 BoardVO view = mapper.read(1);
-	  
-	 log.info(view);
-	  
-	 }
-	
-	 @Test public void testupdate() { 
-	 BoardVO vo = new BoardVO();
-	  
-	 vo.setContent("테스트 내용22"); 
-	 vo.setTitle("테스트 주제22"); 
-	 vo.setWriter("user22");
-	 vo.setBno(2);
-	  
-	 mapper.update(vo);
-	  
-	 }
-	 
+	/*
+	 * @Test public void testGetList() {
+	 * 
+	 * //mapper.getList().forEach(board -> log.info(board));;
+	 * 
+	 * List<BoardVO> list = mapper.getList();
+	 * 
+	 * //vo 출력 for (BoardVO vo: list) { log.info(vo); } }
+	 * 
+	 * @Test public void testGetInsert() {
+	 * 
+	 * BoardVO vo = new BoardVO();
+	 * 
+	 * vo.setTitle("테스트 제목5");
+	 * 
+	 * vo.setContent("테스트 내용5");
+	 * 
+	 * vo.setWriter("user05");
+	 * 
+	 * mapper.insert(vo); }
+	 * 
+	 * @Test public void testView() {
+	 * 
+	 * BoardVO view = mapper.read(1);
+	 * 
+	 * log.info(view);
+	 * 
+	 * }
+	 * 
+	 * @Test public void testupdate() { BoardVO vo = new BoardVO();
+	 * 
+	 * vo.setContent("테스트 내용22"); vo.setTitle("테스트 주제22"); vo.setWriter("user22");
+	 * vo.setBno(2);
+	 * 
+	 * mapper.update(vo);
+	 * 
+	 * }
+	 * 
+	 * @Test public void testdelete() { int vo = mapper.delete(8); log.info(vo); }
+	 */
 	@Test
-	public void testdelete() {
-		int vo = mapper.delete(8);
-		log.info(vo);
+	public void testPaging() {
+		Criteria cri = new Criteria(1,10);
+		List<BoardVO> vo = mapper.getListPaging(cri);
+		for (BoardVO vo2 : vo) { 
+			 log.info(vo2); 
+			 }  
 	}
 }
