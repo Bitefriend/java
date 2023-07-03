@@ -1,6 +1,8 @@
 package org.joonzis.controller;
 
 import org.joonzis.domain.BoardVO;
+import org.joonzis.domain.Criteria;
+import org.joonzis.domain.PageDTO;
 import org.joonzis.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,40 +25,45 @@ public class BoardController {
 	@Setter(onMethod_ = @Autowired)
 	private BoardService service;
 	
+	
 	@GetMapping("/list")
-	public String list(Model model) {
+	public String list(Model model, Criteria cri) {
 		log.info("list...");
 		//1. 서비스에서 getList() 호출
 		//2. 받아 온 list 데이터를 화면에 전달
-		model.addAttribute("list", service.getList());
+		model.addAttribute("list", service.getList(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, service.getTotal()));
 		
 		return "board/list";
 	}
 	@PostMapping("/register")
-	public String register(BoardVO vo, RedirectAttributes rttr) {
+	public String register( BoardVO vo, RedirectAttributes rttr, Criteria cri) {
 		log.info("register....." + vo);
 		
 		service.register(vo);
 		
+		rttr.addAttribute("cri", cri);
 		rttr.addFlashAttribute("result", "ok");
 		
 		return "redirect:/board/list"; // redirect로 list이동
 	}
 	@GetMapping("/register")
-	public String register() {
+	public String register(Model model, Criteria cri) {
+			model.addAttribute("cri", cri);
 		return "board/register";
 	}
 	@GetMapping("/get")
-	public String get(@RequestParam("bno")long bno, Model model) {
+	public String get(@RequestParam("bno")long bno, Model model, Criteria cri) {
 			log.info("/get..." + bno);
 			model.addAttribute("vo", service.get(bno));
+			model.addAttribute("cri", cri);
 		return "board/get";
 	}
 	@GetMapping
-	public String modify(@RequestParam("bno") long bno, Model model) {
+	public String modify(@RequestParam("bno") long bno, Model model, Criteria cri) {
 		log.info("modify");
 		model.addAttribute("vo", service.get(bno));
-		
+		model.addAttribute("cri", cri);
 		return "board/modify";
 	}
 	@PostMapping("/modify")
